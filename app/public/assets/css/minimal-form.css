@@ -1,0 +1,134 @@
+/* custom input */
+/*
+    <div class="minimal-form">
+        <div class="minimal-input-group">
+            <label>search for</label>
+            <input class="minimal-input">
+            ...
+        </div>
+        ...
+    </div>
+*/
+
+.minimal-form {
+    display: table;
+    table-layout: fixed;
+}
+
+/* IN-LINE FORMS */
+
+.minimal-form .minimal-input-group {
+    display: inline-block;
+    border-bottom: solid 1px rgb(255, 255, 255);
+    padding-bottom: 5px;
+}
+
+.minimal-form.in-line .miniml-input-group {
+    display: inline-block;
+}
+
+/*
+.minimal-form label {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 16px;
+    color: rgba(255, 255, 255, 1.0);
+}
+*/
+
+.minimal-form .fa {
+    padding: 0px 10px 0px 10px;
+}
+
+.minimal-form input.minimal-input {
+    background-color: rgba(255, 255, 255, 0.0);
+    border-style: none;
+    outline: none;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+/* FORM ROWS */
+
+.minimal-form .minimal-input-group.row {
+    display: table-row;
+}
+
+.minimal-form span.divider {
+    display: table-row;
+    height: 32px;
+}
+
+.minimal-form .minimal-input-group.row label {
+    display: table-cell;
+    text-align: right;
+    line-height: 48px;
+}
+
+.minimal-form .minimal-input-group.row label.text {
+    text-transform: uppercase;
+    padding-right: 16px;
+}
+
+.minimal-form .minimal-input-group.row input.minimal-input {
+    display: table-cell;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+}
+
+.minimal-form .minimal-input-group.row input:focus {
+    border-bottom: solid 1px rgba(255, 255, 255, 1);
+}
+
+.form-buttons {
+    width: 100%;
+    padding: 32px 0 0;
+}
+
+/* LABEL ICONS */
+
+
+.minimal-form label:before {
+    display: inline-block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    font-family: FontAwesome;
+    font-size: 24px;
+    margin: 0 24px 0 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.minimal-form label.avatar:before {
+    content: '\f2be';
+}
+
+.minimal-form label.name {
+    text-align: center !important;
+}
+
+.minimal-form label.name:before {
+    content: '\f2c2';
+}
+
+.minimal-form label.mail:before {
+    content: '\f0e0';
+}
+
+.minimal-form label.location:before {
+    content: '\f041';
+}
+
+.minimal-form label.blurb:before {
+    content: '\f075';
+}
+
+.minimal-form label.security:before {
+    content: '\f023';
+}
+
+.minimal-form label.search:before {
+    content: '\f002';
+}
+
+.minimal-form label.food:before {
+    content: '\f0f5';
+}

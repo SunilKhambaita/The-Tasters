@@ -1,0 +1,165 @@
+/* custom card, similar to material design */
+/*
+    <div class="card">
+        <div class="card-header"><span>header</span></div>
+        <div class="card-section">
+            <div class="card-content">
+                Content goes here
+                ...
+            </div>
+        </div>
+        ...
+        <div class="card-footer">disclaimer...</div>
+    </div>
+*/
+
+.card {
+    position: relative;
+    vertical-align: top;
+    border-radius: 3px;
+    min-width: 512px;
+    max-width: 512px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(42, 42, 42);
+    box-shadow: 3px 3px 6px rgb(16, 16, 16);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.card.sub-card {
+    background-color: rgb(52, 52, 52);
+    z-index: 2;
+    min-width: 464px;
+    max-width: 464px;
+    box-shadow: 6px 6px 9px rgb(16, 16, 16);
+}
+
+.card-header, .card-content, .card-footer {
+    padding: 20px 25px;
+}
+
+.card .card-cover {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 512px;
+}
+
+.card .card-cover .cover-img {
+    position: absolute;
+    opacity: 0.75;
+    bottom: -100px;
+    min-width: 100%;
+    min-height: 512px;
+}
+
+.card-header {
+    font-weight: normal;
+    font-size: 100%;
+    text-transform: uppercase;
+}
+
+.card-header .card-header-aside {
+    vertical-align: top;
+    float: right;
+}
+
+.card-section, .card-section-final {
+    display: block;
+}
+
+.card-section {
+    border-bottom: solid 1px rgba(255, 255, 255, 0.12);
+}
+
+.card .img-cell {
+    position: relative;
+    display: block;
+    height: 256px;
+}
+
+.card .img-cell button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.card .img-cell .img-title {
+    position: absolute;
+    z-index: 1;
+    padding: 32px 32px 8px;
+    width: 448px;
+    top: 0;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card .img-cell .img-wrapper {
+    position: relative;
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 3px;
+}
+
+.card .img-cell .img-wrapper img {
+    position: absolute;
+    min-height: 100%;
+    max-height: 200%;
+    min-width: 100%;
+    width: 100%;
+    max-width: 200%;
+    bottom: 0;
+}
+
+.card .img-cell .fab-wrapper {
+    bottom: -24px;
+    right: 0;
+    padding: 0 16px 0;
+}
+
+.card .content-cell {
+    display: block;
+}
+
+.card .img-column {
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+}
+
+.card .content-column {
+    display: inline-block;
+    width: 340px;
+    vertical-align: top;
+    padding-left: 16px;
+}
+
+@media screen and (min-width: 800px) {
+
+    .card {
+        min-width: 608px;
+        max-width: 608px;
+    }
+
+    .card .img-cell .img-title {
+        bottom: 0;
+        width: 544px;
+    }
+
+    .card .content-column {
+        width: 416px;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+}

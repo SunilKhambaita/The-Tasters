@@ -1,0 +1,392 @@
+/* GENERAL PAGE STRUCTURE/LAYOUT */
+
+html {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+body, a, h1, h2, h3, h4, h5, h6, header, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+nav {
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    height: 64px;
+    padding: 0 16px 0;
+    background-color: rgb(16, 16, 16);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+nav .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    min-width: 672px;
+    width: 100%;
+    text-align: center;
+    font-size: 125%;
+    line-height: 64px;
+}
+
+nav .logo .secondary {
+    color: rgb(0, 132, 160);
+    text-transform: lowercase;
+
+}
+
+nav .logo .primary {
+    font-size: 110%;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+nav.fixed .options {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 32px;
+    height: 64px;
+}
+
+nav.fixed .options a {
+    line-height: 64px;
+    font-weight: 600;
+    font-size: 90%;
+    padding: 4px;
+    margin: 4px;
+}
+
+nav.fixed {
+    position: fixed;
+}
+
+nav.fixed .logo {
+    position: fixed;
+}
+
+nav.side {
+    position: fixed;
+    top: 0;
+    left: -288px;
+    width: 256px;
+    z-index: 6;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    transition: left 0.2s ease-in;
+}
+
+nav.side .options {
+    position: relative;
+    top: 64px;
+    left: 0;
+}
+
+nav.side .options a {
+    display: block;
+    margin: 16px 0;
+    padding: 8px 16px;
+    font-size: 110%;
+}
+
+header {
+    background-color: rgb(21, 21, 21);
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 256px;
+    padding: 115px 0 0;
+}
+
+header.full-cover {
+    min-height: 512px;
+    height: 100vh;
+    padding-top: 0;
+}
+
+header .header-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 640px;
+    width: 100%;
+    height: 371px;
+    overflow: hidden;
+}
+
+header.full-cover .header-cover {
+    min-height: 512px;
+    height: 100vh;
+}
+
+header .header-cover img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.2;
+}
+
+header.minor {
+    height: 64px;
+}
+
+header span.page-title {
+    font-size: 125%;
+}
+
+.page-body {
+    display: block;
+    padding: 0 16px 0;
+}
+
+.main-content {
+    position: relative;
+    min-width: 512px;
+    max-width: 512px;
+    padding: 0 64px;
+    margin: auto;
+}
+
+section.main-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 64px;
+}
+
+section.main-section h1.main-header {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    min-width: 128px;
+    max-width: 128px;
+    margin: 0 auto 24px;
+    padding: 0 0 8px;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: solid 3px rgb(0, 132, 132);
+}
+
+.fab-wrapper {
+    position: absolute;
+}
+
+.fab {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    border-radius: 56px;
+    background-color: rgb(0, 132, 160);
+    box-shadow: 0 3px 3px rgb(16, 16, 16);
+}
+
+.fab:hover {
+    box-shadow: 0 4px 3px rgb(16, 16, 16);
+}
+
+.fab:active {
+    background-color: rgb(0, 100, 132);
+}
+
+.fab span {
+    width: 48px;
+    height: 48px;
+    line-height: inherit;
+    font-size: 24px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.icon img {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.info-list span.info {
+    margin-bottom: 16px;
+}
+
+.info {
+    display: block;
+    line-height: 24px;
+    margin-left: 48px;
+}
+
+.info:before {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-family: FontAwesome;
+    font-size: 24px;
+    margin: 0 24px 0 -48px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.info span.primary {
+    font-weight: 600;
+}
+
+.info span.secondary {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.info.info-entry:before {
+    content: '\f15c';
+}
+
+.info.info-location:before {
+    content: '\f041';
+}
+
+.info.info-date:before {
+    content: '\f073';
+}
+
+.info.info-business:before {
+    content: '\f1ad';
+}
+
+.info.info-food:before {
+    content: '\f0f5';
+}
+
+.error-text {
+    color: rgb(192, 32, 32);
+    font-weight: 700;
+    font-size: 90%;
+    padding: 0 8px;
+}
+
+/* special buttons */
+
+nav button.nav-toggle {
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    line-height: 64px;
+}
+
+nav.fixed button.nav-toggle {
+    position: fixed;
+}
+
+button.nav-toggle {
+    color: rgba(255, 255, 255, 1.0);
+    background-size: 24px 24px;
+}
+
+button.nav-toggle:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    height: 48px;
+    width: 24px;
+    padding: 0 16px 0;
+    font-size: 24px;
+}
+
+button.nav-toggle.open:before {
+    content: '\f0c9';
+}
+
+button.nav-toggle.close:before {
+    content: '\f060';
+}
+
+#error-text-wrong-turn {
+    margin: 128px 64px;
+    font-size: 32px;
+}
+
+#nav-user {
+    font-size: 120%;
+}
+
+#nav-user .user-icon {
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    height: 36px;
+    width: 36px;
+    border-radius: 48px;
+    border: solid 1px rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+#nav-user .user-icon img {
+    min-height: 38px;
+    min-width: 38px;
+    max-height: 38px;
+}
+
+@media screen and (min-width: 800px) {
+
+    nav .logo {
+        min-width: 0;
+        width: auto;
+        left: 16px;
+        text-align: left;
+    }
+
+    nav.fixed .options {
+        display: inline-block;
+    }
+
+    nav button.nav-toggle {
+        display: none;
+    }
+
+    nav.side {
+        display: none;
+    }
+
+    header {
+        height: 256px;
+    }
+
+    .main-content {
+        min-width: 640px;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    .logo {
+        left: 16px;
+    }
+
+    .main-content {
+        min-width: 1120px;
+    }
+
+}

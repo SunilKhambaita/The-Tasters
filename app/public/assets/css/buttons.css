@@ -1,0 +1,47 @@
+button {
+    display: inline-block;
+    background: center center no-repeat;
+    border: 0;
+    cursor: pointer;
+}
+
+button.btn, a.btn {
+    display: inline-block;
+    background: center center no-repeat;
+    border: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    padding: 8px 24px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+button.btn:hover, a.btn:hover {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+button.btn.accept, a.btn.accept {
+    background-color: rgb(0, 132, 112);
+}
+
+button.btn.accept:active, a.btn.accept:active {
+    background-color: rgb(0, 108, 80);
+}
+
+button.btn.primary, a.btn.primary {
+    background-color: rgb(0, 160, 132);
+}
+
+button.btn.primary:active, a.btn.primary:active {
+    background-color: rgb(0, 132, 100);
+}
+
+button.btn.reject, a.btn.reject {
+    background-color: rgb(160, 0, 0);
+}
+
+button.btn.reject:active, a.btn.reject:active {
+    background-color: rgb(132, 0, 0);
+}

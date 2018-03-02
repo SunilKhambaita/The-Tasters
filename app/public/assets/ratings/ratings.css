@@ -1,0 +1,64 @@
+.rating {
+	display: block;
+}
+
+.rating label {
+	font-weight: bold;
+	font-size: 90%;
+	color: rgba(255, 255, 255, 0.8);
+	text-transform: uppercase;
+	padding-right: 10px;
+}
+
+.rating .rating-star {
+	color: rgba(0, 204, 102, 1.0);
+}
+
+.rating .rating-star-b {
+	color: rgba(0, 204, 204, 1.0);
+}
+
+.rating .rating-count {
+    display: inline-block;
+    padding: 0 2px;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 70%;
+    vertical-align: middle;
+	font-style: italic;
+}
+
+.rating .rating-count:before {
+    content: '(';
+}
+
+.rating .rating-count:after {
+    content: ' ratings)'
+}
+
+.rs-rating {
+	display: inline-block;
+    cursor: pointer;
+}
+
+.rs:before, .rs-static:before {
+    color: rgb(0, 204, 102);
+	content: '\f006';
+	font-family: FontAwesome;
+    padding: 0 2px;
+}
+
+.rating.secondary .rs:before, .rating.secondary .rs-static:before {
+    color: rgb(0, 102, 204);
+}
+
+.rs:hover:before {
+	content: '\f005';
+}
+
+.rs-on:before {
+	content: '\f005';
+}
+
+.rs-off:before {
+	content: '\f006';
+}
