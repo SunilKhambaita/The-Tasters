@@ -1,0 +1,6 @@
+{ "_id" : 1, "name" : "lunch", "restaurantid" : "0", "__v" : 0 }
+{ "_id" : 2, "name" : "Breakfast", "restaurantid" : "0", "__v" : 0 }
+{ "_id" : 40, "name" : "Dinner", "restaurantid" : "5", "__v" : 0 }
+{ "_id" : 43, "name" : "Breakfast", "restaurantid" : "8", "__v" : 0 }
+{ "_id" : 44, "name" : "Lunch", "restaurantid" : "8", "__v" : 0 }
+{ "_id" : 45, "name" : "Dinner", "restaurantid" : "8", "__v" : 0 }

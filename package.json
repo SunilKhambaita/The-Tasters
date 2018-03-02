@@ -1,0 +1,28 @@
+{
+  "name": "thetasters",
+  "version": "1.0.0",
+  "description": "thetasters food rating website",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gubanovd/Team25-TheTasters"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "client-sessions": "^0.7.0",
+    "ejs": "^2.5.6",
+    "express": "^4.14.0",
+    "express-session": "^1.15.0",
+    "jsonwebtoken": "^7.3.0",
+    "mongodb": "^2.2",
+    "mongoose": "^4.9.2",
+    "mongoose-auto-increment": "^5.0.1",
+    "validator": "^7.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no tests\" && exit 1",
+    "start": "node app/app.js"
+  },
+  "author": "Team25 - TheTasters",
+  "license": "ISC"
+}
