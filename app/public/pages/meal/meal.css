@@ -1,0 +1,204 @@
+.page-body {
+    position: relative;
+    min-height: 101vh;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+}
+
+#meal-display, #restaurant-preview, #meal-edit-form {
+    min-width: 424px;
+    max-width: 424px;
+    margin: 16px auto;
+}
+
+#meal-display {
+    position: relative;
+    z-index: 3;
+    margin-top: -192px;
+}
+
+#meal-display .img-cell button {
+    position: absolute;
+    visibility: hidden;
+}
+
+#meal-display .img-cell:hover button {
+    visibility: visible;
+}
+
+#meal-name {
+    display: inline-block;
+    width: 49%;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#meal-rating {
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+}
+
+#meal-rating .rating {
+    display: inline-block;
+}
+
+#meal-rating .rating .rs-static:before {
+    padding: 0;
+}
+
+#meal-price {
+    display: block;
+    padding: 16px 0;
+    font-weight: 600;
+    color: rgb(255, 255, 153);
+    font-size: 110%;
+}
+
+#meal-price:before {
+    content: '$';
+}
+
+#meal-desc {
+    font-size: 85%;
+    text-align: justify;
+    line-height: 200%;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#meal-edit-form {
+    position: relative;
+    top: -300px;
+    z-index: 2;
+    min-width: 424px;
+    max-width: 424px;
+    -webkit-transition: top 0.5s ease-in-out;
+    -moz-transition: top 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
+}
+
+#rest-prev-link {
+    position: relative;
+    top: -300px;
+}
+
+#restaurant-preview {
+    position: relative;
+    margin-top: 48px;
+    z-index: 1;
+}
+
+#restaurant-preview .img-cell {
+    height: 128px;
+}
+
+#restaurant-preview .img-cell .img-wrapper img {
+    width: 100%;
+    max-height: none;
+}
+
+#restaurant-preview .card-content {
+    padding-bottom: 8px;
+}
+
+section.main-section {
+    position: relative;
+    top: -300px;
+}
+
+#meal-reviews {
+    margin: 16px auto;
+}
+
+.img-column .icon {
+    vertical-align: top;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+#user-review .content-column .rating-label {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    width: 58%;
+    text-align: left;
+}
+
+#user-review .content-column .rating {
+    width: 40%;
+    text-align: right;
+}
+
+#review-input {
+    margin: 16px 0;
+    padding: 4px;
+    width: 100%;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.7);
+    border: solid 1px rgb(255, 255, 255);
+}
+
+.meal-review {
+    padding: 0 0 32px;
+}
+
+.meal-review .review-author {
+    display: inline-block;
+    width: 60%;
+    font-weight: 600;
+}
+
+.meal-review .rating {
+    display: inline-block;
+    text-align: right;
+    width: 38%;
+}
+
+.meal-review .rating .rs-static:before {
+    padding: 0;
+}
+
+.meal-review p.review {
+    display: block;
+    text-align: justify;
+    margin: 16px 0;
+    font-size: 90%;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 150%;
+}
+
+@media screen and (min-width: 800px) {
+
+    #meal-reviews {
+        min-width: 512px;
+        max-width: 512px;
+    }
+
+    #meal-reviews .content-column {
+        width: 320px;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    #meal-display, #restaurant-preview, #meal-edit-form {
+        margin-left: 0;
+    }
+
+    #meal-cover {
+        width: 100%;
+    }
+
+    section.main-section {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 640px;
+        max-width: 640px;
+    }
+
+}

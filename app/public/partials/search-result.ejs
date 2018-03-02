@@ -1,0 +1,30 @@
+<div id="restaurant<%= restaurant._id %>" class="search-result card collapsed">
+    <div class="card-header search-result-header">
+        <a href="/display/restaurant?id=<%= restaurant._id %>" class="btn primary">
+            view
+        </a>
+        <div class="img-column"><div class="icon">
+            <% if (restaurant.image) { %>
+                <img src="<%= restaurant.image %>" alt="X">
+            <% } else { %>
+                <img src="/assets/img/default-restaurant-img.png" alt="X">
+            <% } %>
+        </div></div>
+        <div class="content-column">
+            <div class="restaurant-name"><%= restaurant.name %></div>
+            <div class="restaurant-location"><%= restaurant.location %></div>
+            <div class="rating secondary">
+                <div class="rating-count"><%= restaurant.reviews.length %></div>
+                <% for (var i = 0; i < 5; i++) { %>
+                    <% if (restaurant.rating > i) { %>
+                        <span class="rs-static rs-on"></span>
+                    <% } else { %>
+                        <span class="rs-static rs-off"></span>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div id="meals-restaurant<%= restaurant._id %>" class="card-content restaurant-meals">
+    </div>
+</div>

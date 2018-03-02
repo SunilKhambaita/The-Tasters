@@ -1,0 +1,84 @@
+.page-body {
+    min-height: 150vh;
+}
+
+.minimal-form {
+    width: 100%;
+}
+
+.minimal-form .minimal-input-group label {
+    line-height: 48px;
+    width: 64px;
+}
+
+.minimal-form .minimal-input-group input {
+    line-height: 48px;
+    width: 100%;
+}
+
+#input-bio {
+    width: 85% !important;
+}
+
+#bio-char-count {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 75%;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 24px;
+}
+
+#account-deletion {
+    position: relative;
+    margin-top: 64px;
+    height: 144px;
+    overflow: hidden;
+}
+
+#account-deletion-section {
+    position: absolute;
+}
+
+#cancel-del-btn {
+    display: none;
+}
+
+.form-buttons button {
+    display: block;
+}
+
+#acct-del-response, #acct-update-response {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    color: rgb(192, 32, 32);
+}
+
+#submit-del-btn-two, #submit-del-btn-three {
+    display: block;
+    margin-top: 24px;
+}
+
+/* animations */
+
+#account-deletion {
+    -webkit-transition: height 0.4s ease-in-out;
+    -moz-transition: height 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
+}
+
+@media screen and (min-width: 800px) {
+
+    #input-bio {
+        width: 90% !important;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+}
+
+input[type=file]{
+        color:transparent;
+}

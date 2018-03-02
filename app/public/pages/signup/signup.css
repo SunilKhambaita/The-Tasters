@@ -1,0 +1,132 @@
+.page-body {
+    margin-top: 128px;
+}
+
+.page-body .main-content {
+    margin: auto;
+    position: relative;
+}
+
+.page-body .main-content .card {
+    margin: auto;
+}
+
+.minimal-form {
+    width: 100%;
+}
+
+.minimal-form .minimal-input-group label {
+    line-height: 48px;
+    width: 96px;
+}
+
+.minimal-form .minimal-input-group label:before {
+    padding-left: 16px;
+}
+
+.minimal-form .minimal-input-group input {
+    line-height: 48px;
+    width: 100%;
+}
+
+#chooser {
+    margin-bottom: 16px;
+}
+
+#chooser button {
+    display: inline-block;
+    width: 49%;
+    box-shadow: none;
+}
+
+#chooser button.btn.selected {
+    color: rgba(255, 255, 255, 1.0);
+    border-bottom: solid 2px rgb(0, 132, 160);
+}
+
+#chooser button.btn.unselected {
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: none;
+}
+
+#signin-btn, #signup-btn {
+    margin: 32px 0 0;
+}
+
+#signin-card, #signup-card {
+    position: absolute;
+    top: 96px;
+    left: 64px;
+}
+
+#signup-error-empty, #signup-error-matchpass, #signup-error-response, #signin-error-empty, #signin-error-response {
+    display: none;
+}
+
+#owner-form {
+    position: relative;
+    margin-top: 12px;
+    padding-bottom: 20px;
+    text-align: left;
+    height: 36px;
+}
+
+#owner-form label {
+    position: relative;
+    left: 0;
+    top: -12px;
+    vertical-align: top;
+    line-height: 48px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#owner-form input {
+    position: relative;
+    left: 4px;
+    margin: 0 24px;
+    height: 24px;
+    width: 24px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* animation and card states */
+
+#signin-card, #signup-card {
+    -webkit-transition: transform 0.4s ease-in
+    -moz-transition: transform 0.4s ease-in;
+    transition: transform 0.4s ease-in;
+    backface-visibility: hidden;
+}
+
+.card.hidden {
+    transform: rotateY(180deg);
+}
+
+
+.card.visible {
+    transform: rotateY(0);
+}
+
+
+/* Breakpoints */
+
+@media screen and (min-width: 800px) {
+
+    #signin-card, #signup-card {
+        left: 80px;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    #signin-card, #signup-card {
+        left: 324px;
+    }
+
+}
+
+input[type=file]{
+        color:transparent;
+}
+

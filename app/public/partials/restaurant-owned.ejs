@@ -1,0 +1,22 @@
+<div class="restaurant-visited expanded card">
+    <div class="img-cell">
+        <a class="img-title" href="/display/restaurant?id=<%= restaurant._id %>">
+            <%= restaurant.name %>
+        </a>
+        <div class="img-wrapper">
+            <% if (restaurant.image) { %>
+                <img src="<%= restaurant.image %>" alt="X">
+            <% } %>
+            <% if (!restaurant.image) { %>
+                <img src="/assets/img/default-restaurant-img.png" alt="X">
+            <% } %>
+        </div>
+    </div>
+
+    <div class="content-cell">
+        <div class="card-content info-list">
+            <span class="info info-location"><%= restaurant.location %></span>
+        </div>
+    </div>
+
+</div>

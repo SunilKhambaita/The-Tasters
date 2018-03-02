@@ -1,0 +1,22 @@
+<div class="meal-item">
+    <div class="icon">
+        <% if (meal.image) { %>
+            <img src="<%= meal.image %>" alt="X">
+        <% } else { %>
+            <img src="/assets/img/default-meal-img.png" alt="X">
+        <% } %>
+    </div>
+    <div class="meal-info">
+        <div class="meal-name"><a href="/display/meal?id=<%= meal._id %>"><%= meal.name %></a></div>
+        <div class="rating">
+            <% for (var i = 0; i < 5; i++) { %>
+                <% if (meal.rating > i) { %>
+                    <span class="rs-static rs-on"></span>
+                <% } else { %>
+                    <span class="rs-static rs-off"></span>
+                <% } %>
+            <% } %>
+        </div>
+        <p class="meal-review"><%= meal.comment %></p>
+    </div>
+</div>

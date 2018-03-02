@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title><%= title %></title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="/assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+        <link href="/assets/css/buttons.css" rel="stylesheet">
+        <link href="/assets/css/cards.css" rel="stylesheet">
+        <link href="/assets/css/minimal-form.css" rel="stylesheet">
+        <link href="/assets/ratings/ratings.css" rel="stylesheet">
+        <script src="/assets/jquery/jquery-3.1.1.min.js"></script>
+        <script src="/ejs/ejs.min.js"></script>
+        <script src="/assets/ratings/ratings.js"></script>
+        <script src="/services/meals.service.js"></script>
+        <script src="/services/menus.service.js"></script>
+        <script src="/services/restaurants.service.js"></script>
+        <script src="/services/reviews.service.js"></script>
+        <script src="/services/users.service.js"></script>
+    </head>
+
+    <body>
+
+        <nav class="fixed">
+            <button id="nav-open" class="nav-toggle open"></button>
+            <div class="logo">
+                <a href="/">
+                    <span class="secondary">the</span><span class="primary">tasters</span>
+                </a>
+            </div>
+            <div class="options">
+                <% if (loggedUser) { %>
+                  <a href="/settings"><span class="option">Account Settings</span></a>
+                <% } %>
+                <% if (!loggedUser) { %>
+                  <a href="/signup"><span class="option">Log In/Sign up</span></a>
+                <% } %>
+                <% if (loggedUser) { %>
+                  <a href="/user/logout"><span class="option">Log Out</span></a>
+                <% } %>
+                <% if (loggedUser) { %>
+                  <a href="/display/profile"><span id="nav-user" class="option">
+                      <div class="user-icon"><img src="<%= loggedUser.image %>" alt="X"></div>
+                      <%= loggedUser.name %>
+                  </span></a>
+                <% } %>
+            </div>
+        </nav>
+
+        <nav class="side">
+            <button id="nav-close" class="nav-toggle close"></button>
+            <div class="options">
+              <% if (loggedUser) { %>
+                <a href="/display/profile"><span id="nav-user" class="option">
+                      <div class="user-icon"><img src="<%= loggedUser.image %>" alt="X"></div>
+                      <%= loggedUser.name %>
+                  </span></a>
+              <% } %>
+              <% if (loggedUser) { %>
+                <a href="/settings"><span class="option">Account Settings</span></a>
+              <% } %>
+              <% if (!loggedUser) { %>
+                <a href="/signup"><span class="option">Log In/Sign up</span></a>
+              <% } %>
+              <% if (loggedUser) { %>
+                <a href="/user/logout"><span class="option">Log Out</span></a>
+              <% } %>
+            </div>
+        </nav>
+
+        <%- include(body) %>
+
+        <script src="/assets/scripts/main.js"></script>
+    </body>
+
+</html>

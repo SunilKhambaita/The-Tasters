@@ -1,0 +1,29 @@
+<div class="restaurant-visited expanded card">
+    <div class="img-cell">
+        <a href="/display/restaurant?id=<%= restaurant._id %>">
+            <span class="img-title"><%= restaurant.name %></span>
+        </a>
+        <div class="img-wrapper">
+            <% if (restaurant.image) { %>
+                <img src="<%= restaurant.image %>" alt="X">
+            <% } %>
+            <% if (!restaurant.image) { %>
+                <img src="/assets/img/default-restaurant-img.png" alt="X">
+            <% } %>
+        </div>
+    </div>
+
+    <div class="content-cell">
+        <div class="card-content info-list">
+            <span class="info info-location"><%= restaurant.location %></span>
+            <span class="info info-date"><%= date %></span>
+        </div>
+        <div class="card-header info info-food">meals</div>
+        <div class="card-content meal-list">
+            <% for (var i = 0; i < meals.length; i++) { %>
+                <%- include('visit-meal-item.ejs', { meal: meals[i] }) %>
+            <% } %>
+        </div>
+    </div>
+
+</div>

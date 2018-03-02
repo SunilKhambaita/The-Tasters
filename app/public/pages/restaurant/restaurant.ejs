@@ -1,0 +1,102 @@
+<header id="restaurant-cover">
+    <div class="header-cover">
+        <% if (restaurant.image) { %>
+            <img id="restaurant-cover-img" src="<%= restaurant.image %>" alt="X">
+        <% } %>
+        <% if (!restaurant.image) { %>
+            <img id="restaurant-cover-img" src="/assets/img/default-restaurant-img.png" alt="X">
+        <% } %>
+    </div>
+</header>
+
+<div class="page-body">
+    <div class="main-content">
+
+        <div id="restaurant-display" class="card">
+            <div class="img-cell">
+                <% if (loggedUser && loggedUser._id == restaurant.ownerid) { %>
+                    <button id="btn-edit-restaurant" class="btn primary"><span class="fa fa-pencil"></span></button>
+                <% } %>
+                <div class="img-wrapper">
+                    <% if (restaurant.image) { %>
+                        <img id="restaurant-image" src="<%= restaurant.image %>" alt="X">
+                    <% } %>
+                    <% if (!restaurant.image) { %>
+                        <img id="restaurant-image" src="/assets/img/default-restaurant-img.png" alt="X">
+                    <% } %>
+                </div>
+            </div>
+            <div class="content-cell card-content">
+                <div id="restaurant-name"><%= restaurant.name %></div>
+                <div id="restaurant-location"><%= restaurant.location %></div>
+                <%- include('../../partials/rating.ejs', { rating: restaurant.rating, count: restaurant.ratings }); %>
+                <div id="restaurant-desc"><%= restaurant.description %></div>
+            </div>
+        </div>
+
+        <div id="restaurant-edit-form" class="card">
+            <div class="card-content">
+                <form class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="text">Name</label>
+                        <input id="edit-restaurant-name" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Location</label>
+                        <input id="edit-restaurant-location" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Description</label>
+                        <input id="edit-restaurant-desc" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Image</label>
+                        <input id="edit-restaurant-image" class="minimal-input">
+                    </div>
+                </form>
+                <button id="save-restaurant" class="btn primary">save</button>
+                <button id="cancel-restaurant" class="btn reject">cancel</button>
+            </div>
+        </div>
+
+        <section class="main-section" id="restaurant-menus">
+            <h1 class="main-header">menus</h1>
+
+            <% if (loggedUser && loggedUser._id == restaurant.ownerid) { %>
+            <div id="add-menu" class="restaurant-menu collapsed card">
+                <div class="card-header">
+                    + Add Menu
+                    <div class="btn-group">
+                        <button id="save-new-menu" class="btn primary">Save</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <form class="minimal-form in-line">
+                        <input id="new-menu-name" class="minimal-input" placeholder="Menu Name">
+                        <span class="divider"></span>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+
+            <% if (loggedUser && loggedUser._id == restaurant.ownerid) { %>
+
+                <% for (var i = 0; i < restaurant.menus.length; i++) { %>
+                    <%- include('../../partials/restaurant-menu.ejs', { menu: restaurant.menus[i] }) %>
+                <% } %>
+
+            <% } else { %>
+
+                <% for (var i = 0; i < restaurant.menus.length; i++) { %>
+                    <%- include('../../partials/restaurant-menu-static.ejs', { menu: restaurant.menus[i] }) %>
+                <% } %>
+
+            <% } %>
+
+        </section>
+
+    </div>
+</div>
+
+<link href="/pages/restaurant/restaurant.css" rel="stylesheet">
+<script src="/pages/restaurant/restaurant.js"></script>

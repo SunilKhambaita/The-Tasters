@@ -1,0 +1,10 @@
+<div class="rating">
+    <% if (count === 0 || count) { %><div class="rating-count"><%= count %></div><% } %>
+    <% for (var i = 0; i < 5; i++) { %>
+        <% if (rating > i) { %>
+            <span class="rs-static rs-on"></span>
+        <% } else { %>
+            <span class="rs-static rs-off"></span>
+        <% } %>
+    <% } %>
+</div>

@@ -1,0 +1,107 @@
+<header id="profile-cover">
+    <div class="main-content">
+        <div id="profile-photo">
+          <% if (user.image) { %>
+            <img src="<%= user.image %>" alt="Profile Photo">
+          <% } %>
+          <% if (!user.image) { %>
+            <img src="/assets/img/default-profile00.png" alt="Profile Photo">
+          <% } %>
+        </div>
+        <section id="profile-intro">
+            <h1 id="user-name"><%= user.name %></h1>
+            <p id="bio"><%= user.bio %></p>
+        </section>
+    </div>
+</header>
+
+<div class="page-body">
+    <div class="main-content">
+        <div id="profile-details" class="card">
+            <div class="card-section card-content">
+                <span class="info info-location">
+                    <span class="secondary">from </span>
+                    <span class="primary"><%= user.location %></span>
+                </span>
+            </div>
+
+            <div class="card-section card-content">
+                <span class="info info-date">
+                    <span class="secondary">joined </span>
+                    <span class="primary"><%= user.niceJoined %></span>
+                </span>
+            </div>
+
+            <div class="card-section-final card-content">
+                <span class="info info-entry">
+                    <% if (user.type == 'customer') { %>
+                        <span class="secondary">reviewed </span>
+                        <span class="primary"><%= user.mealReviews %></span>
+                        <span class="secondary"> meals</span>
+                    <% } else { %>
+                        <span class="secondary">owns </span>
+                        <span class="primary"><%= user.restaurants.length %></span>
+                        <span class="secondary"> restaurants</span>
+                    <% } %>
+                </span>
+            </div>
+        </div>
+
+        <% if (user.type == 'customer') { %>
+
+            <section id="restaurants-visited" class="main-section">
+                <h1 class="main-header">Reviews</h1>
+
+                <% for (var i = (user.reviews.length - 1); i >= 0; i--) { %>
+                    <%- include('../../partials/restaurant-visit.ejs', { restaurant: user.reviews[i].restaurant, date: user.reviews[i].niceDate, meals: [user.reviews[i].meal]  }) %>
+                <% } %>
+
+            </section>
+
+        <% } %>
+
+        <% if (user.type == 'owner') { %>
+
+            <section id="restaurants-owned" class="main-section">
+                <h1 class="main-header">Restaurants</h1>
+
+                <div id="restaurant-add" class="restaurant-add collapsed card">
+                    <div id="restaurant-add-header" class="card-header">
+                        + Add Restaurant
+                        <button id="btn-save-restaurant" class="btn primary">save</button>
+                    </div>
+                    <div id="restaurant-add-content" class="card-content">
+                        <form class="minimal-form">
+                            <div class="minimal-input-group row">
+                                <label class="text">Name</label>
+                                <input id="new-restaurant-name" class="minimal-input">
+                            </div>
+                            <div class="minimal-input-group row">
+                                <label class="text">Location</label>
+                                <input id="new-restaurant-location" class="minimal-input">
+                            </div>
+                            <div class="minimal-input-group row">
+                                <label class="text">Description</label>
+                                <input id="new-restaurant-desc" class="minimal-input">
+                            </div>
+                            <div class="minimal-input-group row">
+                                <label class="text">Image</label>
+                                <input id="new-restaurant-image" class="minimal-input">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <% for (var i = 0; i < user.restaurants.length; i++) { %>
+                    <%- include('../../partials/restaurant-owned.ejs', { restaurant: user.restaurants[i] }) %>
+                <% } %>
+
+            </section>
+
+        <% } %>
+
+    </div>
+</div>
+
+<link href="/pages/profile/profile.css" rel="stylesheet">
+<script src="/pages/profile/profile.js"></script>

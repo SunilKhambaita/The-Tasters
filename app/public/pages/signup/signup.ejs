@@ -1,0 +1,81 @@
+<div class="page-body">
+    <div class="main-content">
+
+        <div id="chooser" class="card">
+            <div class="card-content">
+                <button id="choose-signin" class="btn selected">Sign in</button>
+                <button id="choose-signup" class="btn unselected">Sign up</button>
+            </div>
+        </div>
+
+        <div id="signin-card" class="card visible">
+            <div class="card-content">
+                <form id="signin-form" class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="mail"></label>
+                        <input id="signin-email" class="minimal-input" placeholder="Email" required>
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="security"></label>
+                        <input id="signin-pass" class="minimal-input" placeholder="Password" type="password" required>
+                    </div>
+                </form>
+                <button id="signin-btn" class="btn accept">Sign in</button>
+                <span id="signin-error-empty" class="error-text">Please enter email and password.</span>
+                <span id="signin-error-response" class="error-text"></span>
+            </div>
+        </div>
+
+        <div id="signup-card" class="card hidden">
+            <div class="card-content">
+                <form id="owner-form" class="minimal-form in-line">
+                    <input id="input-type-owner" type="radio" name="type">
+                    <label>I am a restaurant owner</label>
+                    <div class="divider"></div>
+                    <input id="input-type-customer" type="radio" name="type">
+                    <label>I'm just here to eat food</label>
+                </form>
+                <form id="signup-form" class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="fa fa-user-circle-o"></label>
+                        <input id="signup-image" class="minimal-input" placeholder="Profile Picture url">
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="name"></label>
+                        <input id="signup-name" class="minimal-input" placeholder="Name" required>
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="mail"></label>
+                        <input id="signup-email" class="minimal-input" placeholder="Email" required>
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="location"></label>
+                        <input id="signup-location" class="minimal-input" placeholder="City or town" required>
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="security"></label>
+                        <input id="signup-pass" class="minimal-input" placeholder="Password" type="password" required>
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="security"></label>
+                        <input id="signup-pass-confirm" class="minimal-input" placeholder="Confirm Password" type="password" required>
+                    </div>
+                </form>
+                <button id="signup-btn" class="btn accept">Sign Up</button>
+                <span id="signup-error-empty" class="error-text">All fields are required.</span>
+                <span id="signup-error-matchpass" class="error-text">Passwords don't match.</span>
+                <span id="signup-error-response" class="error-text"></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<link href="/pages/signup/signup.css" rel="stylesheet">
+<script src="/pages/signup/signup.js"></script>

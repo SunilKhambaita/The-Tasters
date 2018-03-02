@@ -1,0 +1,33 @@
+<div class="meal-review">
+    <div class="img-column">
+        <div class="icon">
+            <img src="<%= review.user.image %>" alt="X">
+        </div>
+    </div>
+    <div class="content-column">
+        <a href="/display/profile?id=<%= review.userid %>">
+            <% if(review.user) { %>
+                <span class="review-author"><%= review.user.name %></span>
+            <% } %>
+            <% if(!review.user) { %>
+                <span class="review-author">user<%= review.userid %></span>
+            <% } %>
+        </a>
+        <div class="rating">
+            <% for (var i = 0; i < 5; i++) { %>
+                <% if (review.rating > i) { %>
+                    <span class="rs-static rs-on"></span>
+                <% } else { %>
+                    <span class="rs-static rs-off"></span>
+                <% } %>
+            <% } %>
+        </div>
+        <p class="review">
+            <% if (review.comment == '') { %>
+                <i>No comment</i>
+            <% } else { %>
+                "<%= review.comment %>"
+            <% } %>
+        </p>
+    </div>
+</div>

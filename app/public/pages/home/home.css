@@ -1,0 +1,274 @@
+#main-cover {
+    background-color: rgb(255, 255, 255);
+}
+
+#main-cover .header-cover img {
+    bottom: -256px;
+    min-width: 100%;
+    width: 1920px;
+    min-height: 100vh;
+    opacity: 0.85;
+}
+
+#main-search {
+    position: relative;
+    bottom: 192px;
+    margin: 0 auto;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 4px 4px 8px rgb(8, 8, 8);
+}
+
+/* mild elevating effect */
+#main-search:hover {
+    max-width: 514px;
+    width: 514px;
+    box-shadow: 8px 8px 16px rgb(8, 8, 8);
+}
+
+#main-search .card-content {
+    padding: 16px 24px 8px;
+}
+
+#main-search .card-content .minimal-form .minimal-input-group {
+    display: inline-block;
+    max-width: 256px;
+    border: none;
+}
+
+#main-search .card-content .minimal-form input {
+    display: inline-block;
+    max-width: 160px;
+    line-height: 28px;
+}
+
+.page-body {
+    min-height: 100vh;
+}
+
+#map-result {
+    min-width: 512px;
+    max-width: 512px;
+    width: 512px;
+    transition: none;
+}
+
+#map-wrapper {
+    display: block;
+    border: solid 1px lightgrey;
+    width: 100%;
+    height: 416px;
+}
+
+#google-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.search-result .card-header .btn {
+    position: absolute;
+    right: 25px;
+    -webkit-transition: top 0.5s ease-in-out, opacity 0.7s linear;
+    -moz-transition: top 0.5s ease-in-out, opacity 0.7s linear;
+    transition: top 0.5s ease-in-out, opacity 0.7s linear;
+}
+
+.search-result.card.collapsed .card-header .btn {
+    opacity: 0;
+    top: -50px;
+}
+
+.search-result.card.expanded .card-header .btn {
+    opacity: 1;
+    top: 20px;
+}
+
+.search-result .img-column .icon {
+    vertical-align: middle;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.search-result .content-column .restaurant-name {
+    font-size: 110%;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.search-result .content-column .restaurant-location {
+    font-size: 90%;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+}
+
+.search-result .content-column .rating label {
+    font-size: 90%;
+}
+
+/* animation styles */
+
+#main-search {
+    -webkit-transition: width 0.1s linear, box-shadow 0.1s linear, bottom 0.4s ease-in-out;
+    -moz-transition: width 0.1s linear, box-shadow 0.1s linear, bottom 0.4s ease-in-out;
+    transition: width 0.1s linear, box-shadow 0.1s linear, bottom 0.4s ease-in-out;
+}
+
+.search-result {
+    height: 120px; /* initial height, will be overwritten by JS */
+}
+
+.main-content {
+    min-width: 512px;
+    max-width: 536px;
+}
+
+.card, .card .card-header, .card .card-content {
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.card {
+    min-width: 512px;
+    width: 512px;
+    margin: 16px auto;
+    max-width: 640px;
+    overflow: hidden;
+}
+
+.card.collapsed {
+    width: 512px;
+    margin: 8px auto;
+    background-color: rgb(36, 36, 36);
+}
+
+.card.collapsed:hover {
+    box-shadow: 5px 5px 10px rgb(16, 16, 16);
+}
+
+.card.collapsed .card-header:hover, .card.expanded .card-header:hover {
+    cursor: pointer;
+    background-color: rgb(34, 34, 34);
+}
+
+.card.expanded {
+    width: 536px;
+    margin: 48px auto;
+    box-shadow: 8px 8px 16px rgb(8, 8, 8);
+}
+
+.card.expanded .card-header {
+    background-color: rgb(36, 36, 36);
+}
+
+.card.expanded .card-header, .card.expanded .card-content {
+    padding: 20px 37px;
+}
+
+/* stolen from restaurant-page.css for now */
+
+.search-result .card-content .menu-item {
+    padding: 18px 0;
+}
+
+.search-result .card-content .menu-item .img-column .icon {
+    border-radius: 10px;
+    border: solid 2px rgba(255, 255, 255, 0.3);
+}
+
+.search-result .card-content .menu-item .content-column .meal-name {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 110%;
+    width: 48%;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.search-result .card-content .menu-item .content-column .rating {
+    width: 50%;
+    vertical-align: top;
+    text-align: right;
+    display: inline-block;
+}
+
+.search-result .card-content .menu-item .content-column .meal-price {
+    display: block;
+    padding: 16px 0;
+    font-weight: 600;
+    color: rgb(255, 255, 153);
+    font-size: 110%;
+}
+
+.search-result .card-content .menu-item .content-column .meal-price:before {
+    content: '$';
+}
+
+.search-result .card-content .menu-item .content-column .meal-desc {
+    font-size: 85%;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 150%;
+}
+
+@media screen and (min-width: 800px) {
+
+    .main-content {
+        max-width: 632px;
+    }
+
+    #map-result {
+        min-width: 608px;
+        max-width: 608px;
+    }
+
+    .card {
+        width: 608px;
+    }
+
+    .card.collapsed {
+        width: 608px;
+    }
+
+    .card.expanded {
+        width: 632px;
+    }
+
+    #main-search:hover {
+        max-width: 610px;
+        width: 610px;
+    }
+
+    #main-search .card-content .minimal-form .minimal-input-group {
+        max-width: 276px;
+    }
+
+    #main-search .card-content .minimal-form input {
+        max-width: 212px;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    #map-section, #map-result {
+        min-width: 512px;
+        max-width: 512px;
+        width: 512px;
+    }
+
+    #search-results-wrapper {
+        position: absolute;
+        top: 64px;
+        right: 12px;
+        min-width: 632px;
+        max-width: 632px;
+    }
+
+    .main-content {
+        max-width: 1140px;
+    }
+
+}

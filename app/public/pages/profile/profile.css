@@ -1,0 +1,274 @@
+#profile-cover {
+    height: 512px;
+}
+
+#profile-photo {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    overflow: hidden;
+}
+
+#profile-photo img {
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+#profile-intro {
+    display: block;
+    text-align: center;
+}
+
+#user-name {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 0;
+}
+
+#bio {
+    color: rgb(128, 128, 128);
+    font-style: italic;
+    max-width: 360px;
+    margin: auto;
+    text-align: justify;
+    text-align-last: right;
+    padding-top: 25px;
+}
+
+#bio:before, #bio:after {
+    content: '"';
+}
+
+#profile-details {
+    position: relative;
+    z-index: 1;
+    min-width: 320px;
+    max-width: 320px;
+    margin: -150px auto 0;
+}
+
+#restaurants-visited, #restaurants-owned {
+    min-width: 512px;
+    max-width: 512px;
+    margin-top: 96px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#restaurants-visited .restaurant-visited, #restaurants-owned .restaurant-owned {
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    transition: top 0.5s ease-in-out;
+}
+
+#restaurants-visited h1 {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 32px;
+}
+
+.meal-item .icon {
+    vertical-align: top;
+    width: 64px;
+    height: 64px;
+    margin: 0 8px 8px 0;
+    box-shadow: 2px 2px 2px rgb(16, 16, 16);
+}
+
+.restaurant-visited.collapsed .img-cell {
+    height: 68px;
+}
+
+.restaurant-visited.collapsed .img-cell .fab.fab-collapse {
+    display: none;
+}
+
+.restaurant-visited.expanded .img-cell .fab.fab-collapse {
+    display: inline-block;
+}
+
+.restaurant-visited.collapsed .img-cell .fab.fab-expand {
+    display: inline-block;
+}
+
+.restaurant-visited.expanded .img-cell .fab.fab-expand {
+    display: none;
+}
+
+.restaurant-visited.expanded .img-cell {
+    height: 256px;
+}
+
+.restaurant-visited.collapsed .content-cell .info-list {
+    display: none;
+}
+
+.restaurant-visited.collapsed .content-cell .info-food {
+    display: none;
+}
+
+.restaurant-visited.collapsed .content-cell .meal-item {
+    display: inline-block;
+}
+
+.restaurant-visited.collapsed .content-cell .meal-info {
+    display: none;
+}
+
+.restaurant-visited.expanded .content-cell .info-list {
+    display: block;
+}
+
+.restaurant-visited.expanded .content-cell .info-food {
+    display: block;
+}
+
+.restaurant-visited.expanded .content-cell .meal-item {
+    display: block;
+    padding-bottom: 16px;
+}
+
+.restaurant-visited.expanded .content-cell .meal-info {
+    display: inline-block;
+}
+
+.meal-item .meal-info {
+    min-width: 366px;
+    max-width: 366px;
+    padding-left: 16px;
+}
+
+.meal-item .meal-info .meal-name {
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.meal-item .meal-info p.meal-review {
+    font-size: 90%;
+    padding: 16px 0;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.meal-item .meal-info p.meal-review:before, .meal-item .meal-info p.meal-review:after {
+    content: '"';
+}
+
+.restaurant-add {
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    margin: auto;
+}
+
+.restaurant-add .card-header {
+    text-align: center;
+}
+
+.restaurant-add .card-header:hover {
+    cursor: pointer;
+    background-color: rgb(34, 34, 34);
+}
+
+.restaurant-add .card-header button {
+    position: absolute;
+    right: 12px;
+    -webkit-transition: top 0.5s ease-in-out, opacity 0.5s linear;
+    -moz-transition: top 0.5s ease-in-out, opacity 0.5s linear;
+    transition: top 0.5s ease-in-out, opacity 0.5s linear;
+}
+
+.restaurant-add.collapsed .card-header button {
+    opacity: 0;
+    top: -50px;
+}
+
+.restaurant-add.expanded .card-header button {
+    opacity: 1;
+    top: 12px;
+}
+
+@media screen and (min-width: 800px) {
+
+    #profile-cover {
+        height: 384px;
+    }
+
+    button.side-nav-toggle {
+        display: none;
+    }
+
+    #profile-photo {
+        display: inline-block;
+        text-align: left;
+    }
+
+    #profile-intro {
+        vertical-align: top;
+        text-align: left;
+        max-width: 284px;
+        padding: 16px 0 0 16px;
+    }
+
+    #bio {
+        padding: 0;
+        margin: 0;
+        max-width: 256px;
+    }
+
+    #profile-details {
+        margin: -384px 0 0 auto;
+    }
+
+    #restaurants-visited, #restaurants-owned {
+        min-width: 608px;
+        max-width: 608px;
+        margin-top: 192px;
+    }
+
+    .meal-item .meal-info {
+        min-width: 466px;
+        max-width: 466px;
+    }
+
+}
+
+
+@media screen and (min-width: 1280px) {
+
+    #profile-cover {
+        position: fixed;
+        top: 0;
+        height: 256px;
+        width: 100%;
+    }
+
+     #profile-intro {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        max-width: 256px;
+        padding: 16px 0 0 16px;
+    }
+
+    #bio {
+        max-width: 360px;
+    }
+
+    #profile-details {
+        position: fixed;
+        top: 360px;
+        z-index: 0;
+        margin: 50px 0 0 36px;
+    }
+
+    #restaurants-visited, #restaurants-owned {
+        position: relative;
+        z-index: 1;
+        margin: 128px 0 0 auto;
+    }
+
+}

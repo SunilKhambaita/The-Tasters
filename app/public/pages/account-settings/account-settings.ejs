@@ -1,0 +1,93 @@
+<header class="minor">
+    <div class="main-content">
+        <span class="page-title">Manage Your Account</span>
+    </div>
+</header>
+
+<div class="page-body">
+    <div class="main-content">
+
+        <div class="card">
+            <div class="card-header">account information</div>
+            <div class="card-content">
+                <form id="account-settings-form" class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="avatar"></label>
+                        <input id="input-image" class="minimal-input" placeholder="Profile Picture url">
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="name"></label>
+                        <input id="input-name" class="minimal-input" placeholder="Your name">
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="mail"></label>
+                        <input id="input-email" class="minimal-input" placeholder="Your email">
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="location"></label>
+                        <input id="input-location" class="minimal-input" placeholder="Your location">
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="blurb"></label>
+                        <input id="input-bio" class="minimal-input" placeholder="Write a short bio" maxlength="140">
+                        <div id="bio-char-count">140</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">authenticate changes</div>
+            <div class="card-content">
+                <form id="verify-password-form" class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="security"></label>
+                        <input id="input-password" class="minimal-input" placeholder="Password" type="password">
+                    </div>
+                </form>
+                <div class="form-buttons">
+                    <button id="submit-btn" class="btn accept">submit</button>
+                </div>
+                <div id="acct-update-response"> </div>
+            </div>
+        </div>
+
+        <div id="account-deletion" class="card">
+            <div id="acct-del-preview">
+                <div class="card-header">account deletion</div>
+                <div class="card-content">
+                    <button id="account-del-btn" class="btn reject">I want to delete my account</button>
+                    <button id="cancel-del-btn" class="btn accept">nevermind</button>
+                </div>
+            </div>
+
+            <div id="acct-del-main" class="card-content">
+                <form id="account-deletion-form" class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="security"></label>
+                        <input id="del-input-password" class="minimal-input" placeholder="Password" type="password">
+                    </div>
+                    <span class="divider"></span>
+                    <div class="minimal-input-group row">
+                        <label class="security"></label>
+                        <input id="del-input-password-verify" class="minimal-input" placeholder="Verify Password" type="password">
+                    </div>
+                </form>
+                <div class="form-buttons">
+                    <button id="submit-del-btn" class="btn reject">delete my account</button>
+                    <button id="submit-del-btn-two" class="btn reject">I am sure I want to delete my account</button>
+                    <button id="submit-del-btn-three" class="btn reject">OK, just do it!</button>
+                </div>
+                <div id="acct-del-response"> </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<link href="/pages/account-settings/account-settings.css" rel="stylesheet">
+<script src="/pages/account-settings/account-settings.js"></script>

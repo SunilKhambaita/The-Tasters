@@ -1,0 +1,43 @@
+<header id="main-cover" class="full-cover">
+    <div class="header-cover"><img src="assets/img/chef.jpg" alt="rest. cover"></div>
+</header>
+
+<div class="page-body">
+    <div class="main-content">
+
+        <div id="main-search" class="card">
+            <div class="card-content">
+                <form class="minimal-form in-line">
+                    <div class="minimal-input-group">
+                        <label class="food"></label>
+                        <input id="input-food" class="minimal-input" placeholder="Search food">
+                    </div>
+                    <div class="minimal-input-group">
+                        <label class="location"></label>
+                        <input id="input-location" class="minimal-input" placeholder="Search location">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section id="map-section" class="main-section">
+            <h1 class="main-header">map</h1>
+            <div id="map-result" class="card">
+                <div id="map-wrapper">
+                    <iframe id="google-map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBBuG8xGK63C99XyuNSpg4yx4m9LPwHJQ0&q=Toronto"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="search-results-wrapper" class="main-section">
+            <h1 class="main-header">restaurants</h1>
+
+            <div id="search-results"><!-- dynamically generated in JS --></div>
+
+        </section>
+
+    </div>
+</div>
+
+<link href="/pages/home/home.css" rel="stylesheet">
+<script src="/pages/home/home.js"></script>

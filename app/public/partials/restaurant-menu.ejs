@@ -1,0 +1,39 @@
+<div id="menu<%= menu._id %>" class="restaurant-menu collapsed card">
+    <div id="header-menu<%= menu._id %>" class="card-header">
+        <%= menu.name %>
+        <div class="btn-group">
+            <button id="btn-add-meal-menu<%= menu._id %>" class="btn primary">add meal</button>
+            <button id="btn-del-menu<%= menu._id %>" class="btn reject"><span class="fa fa-trash"></span></button>
+        </div>
+    </div>
+    <div id="content-menu<%= menu._id %>" class="card-content">
+
+        <div id="add-meal-form<%= menu._id %>" class="card sub-card">
+            <div class="card-content">
+                <form class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="text">Name</label>
+                        <input id="new-meal-name-menu<%= menu._id %>" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Price</label>
+                        <input id="new-meal-price-menu<%= menu._id %>" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Description</label>
+                        <input id="new-meal-desc-menu<%= menu._id %>" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Image</label>
+                        <input id="new-meal-image-menu<%= menu._id %>" class="minimal-input">
+                    </div>
+                </form>
+                <button id="btn-save-meal-menu<%= menu._id %>" class="btn primary">save</button>
+                <button id="btn-cancel-meal-menu<%= menu._id %>" class="btn reject">cancel</button>
+            </div>
+        </div>
+
+        <div id="meals-list-menu<%= menu._id %>"></div>
+
+    </div>
+</div>

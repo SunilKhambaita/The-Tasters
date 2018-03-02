@@ -1,0 +1,129 @@
+<header id="meal-cover">
+    <div class="header-cover">
+        <% if (meal.image) { %>
+            <img id="header-cover-img" src="<%= meal.image %>" alt="X">
+        <% } %>
+        <% if (!meal.image) { %>
+            <img id="header-cover-img" src="/assets/img/default-meal-img.png" alt="X">
+        <% } %>
+    </div>
+</header>
+
+<div class="page-body">
+    <div class="main-content">
+
+        <div id="meal-display" class="card">
+            <div class="img-cell">
+                <% if (loggedUser && loggedUser._id == meal.ownerid) { %>
+                <button id="btn-edit-meal" class="btn primary"><span class="fa fa-pencil"></span></button>
+                <% } %>
+                <div class="img-wrapper">
+                    <% if (meal.image) { %><img id="meal-img" src="<%= meal.image %>" alt="X"><% } %>
+                    <% if (!meal.image) { %><img id="meal-img" src="/assets/img/default-meal-img.png" alt="X"><% } %>
+                </div>
+            </div>
+            <div class="content-cell card-content">
+                <div id="meal-name"><%= meal.name %></div>
+                <div id="meal-rating">
+                    <%- include('../../partials/rating.ejs', { rating: meal.rating, count: meal.reviews.length }) %>
+                </div>
+                <div id="meal-price"><%= meal.price %></div>
+                <div id="meal-desc"><%= meal.description %></div>
+            </div>
+        </div>
+
+        <div id="meal-edit-form" class="card">
+            <div class="card-content">
+                <form class="minimal-form">
+                    <div class="minimal-input-group row">
+                        <label class="text">Name</label>
+                        <input id="edit-meal-name" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Price</label>
+                        <input id="edit-meal-price" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Description</label>
+                        <input id="edit-meal-desc" class="minimal-input">
+                    </div>
+                    <div class="minimal-input-group row">
+                        <label class="text">Image</label>
+                        <input id="edit-meal-image" class="minimal-input">
+                    </div>
+                </form>
+                <button id="save-meal" class="btn primary">save</button>
+                <button id="cancel-meal" class="btn reject">cancel</button>
+            </div>
+        </div>
+
+
+        <a id="rest-prev-link" href="/display/restaurant?id=<%= meal.restaurant._id %>">
+            <div id="restaurant-preview" class="card">
+                <div class="img-cell">
+                    <div class="img-wrapper">
+                        <% if (meal.restaurant.image) { %><img src="<%= meal.restaurant.image %>" alt="X"><% } %>
+                        <% if (!meal.restaurant.image) { %><img src="/assets/img/default-restaurant-img.png" alt="X"><% } %>
+                    </div>
+                </div>
+                <div class="content-cell card-content info-list">
+                    <span class="info info-business">
+                        <%= meal.restaurant.name %>
+                    </span>
+                    <span id="restaurant-location" class="info info-location">
+                        <%= meal.restaurant.location %>
+                    </span>
+                </div>
+            </div>
+        </a>
+
+
+        <section id="review-section" class="main-section">
+            <h1 class="main-header">reviews</h1>
+
+            <% if (loggedUser && loggedUser.type == 'customer') { %>
+
+                <div id="meal-reviews" class="card">
+                    <div class="card-content">
+                        <div id="user-review">
+                            <div class="img-column">
+                                <div class="icon">
+                                    <img id="user-icon" src="<%= loggedUser.image %>" alt="user icon">
+                                </div>
+                            </div>
+                            <div  class="content-column">
+                                <span class="rating-label">My rating</span>
+                                <span class="rs-rating rating">
+                                    <span class="rs" id="user-rating"><span class="rs"><span class="rs"><span class="rs"><span class="rs"></span></span></span></span></span>
+                                </span>
+                                <textarea id="review-input" class="user-review-input" placeholder="e.g. I liked this meal"></textarea>
+                                <button id="submit-review" class="btn accept">submit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            <% } %>
+
+            <div id="meal-reviews" class="card">
+                <div class="card-content">
+                    <div id="reviews-list">
+                        <% if (meal.reviews.length == 0) { %>
+                            <p id='no-review-txt'>No reviews</p>
+                        <% } else { %>
+                            <% for (var i = 0; i < meal.reviews.length; i++) { %>
+                                <%- include("../../partials/meal-review.ejs", { review: meal.reviews[i]}) %>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</div>
+
+<link href="/pages/meal/meal.css" rel="stylesheet">
+<script src="/pages/meal/meal.js"></script>
